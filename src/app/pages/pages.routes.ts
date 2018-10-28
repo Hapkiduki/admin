@@ -13,14 +13,16 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../login/register.component';
 
 import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.component';
+import { PromesasComponent } from './promesas/promesas.component';
 
 const pagesRoutes: Routes = [
   {
     path: '',
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent },
-      { path: 'graficas1', component: Graficas1Component },
+      { path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'} },
+      { path: 'progress', component: ProgressComponent, data: {titulo: 'Progress'} },
+      { path: 'graficas1', component: Graficas1Component, data: {titulo: 'Gráficas'} },
+      { path: 'promesas', component: PromesasComponent },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     ],
     component: PagesComponent
